@@ -93,12 +93,12 @@ resource "aws_s3_object" "theo_approval" {
   content_type = "image/jpg"
 }
 
-# resource "aws_s3_object" "bucket_files" {
-#   bucket       = aws_s3_bucket.deliverables.id
-#   key          = "screenshots/05-bucket-files.png"
-#   source       = "${path.module}/deliverables/05-bucket-files.png"
-#   content_type = "image/png"
-# }
+resource "aws_s3_object" "bucket_files" {
+  bucket       = aws_s3_bucket.deliverables.id
+  key          = "screenshots/05-bucket-files.png"
+  source       = "${path.module}/deliverables/05-bucket-files.png"
+  content_type = "image/png"
+}
 
 resource "aws_s3_object" "readme" {
   bucket       = aws_s3_bucket.deliverables.id
@@ -107,7 +107,7 @@ resource "aws_s3_object" "readme" {
   #acl          = "public-read"
 
   content = <<-EOF
-    # Class 7 G-Check Deliverables
+    # Class 7 G-Check Deliverables!
     
 
     ## Repo
