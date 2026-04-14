@@ -95,9 +95,9 @@ resource "aws_s3_object" "theo_approval" {
 
 resource "aws_s3_object" "bucket_files" {
   bucket       = aws_s3_bucket.deliverables.id
-  key          = "screenshots/05-bucket-files.png"
-  source       = "${path.module}/deliverables/05-bucket-files.png"
-  content_type = "image/png"
+  key          = "screenshots/05-bucket-files.jpg"
+  source       = "${path.module}/deliverables/05-bucket-files.jpg"
+  content_type = "image/jpg"
 }
 
 resource "aws_s3_object" "readme" {
