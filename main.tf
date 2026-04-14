@@ -107,7 +107,7 @@ resource "aws_s3_object" "readme" {
   #acl          = "public-read"
 
   content = <<-EOF
-    # Class 7 G-Check Deliverables
+    # Class 7 G-Check Deliverables!
     
 
     ## Repo
