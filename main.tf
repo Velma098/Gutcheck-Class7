@@ -17,12 +17,12 @@ provider "aws" {
 # =============================================================================
 
 resource "aws_s3_bucket" "deliverables" {
-  bucket_prefix = "Gutcheck-Class7"
+  bucket_prefix = "gutcheck-class7"
   force_destroy = true
 
   tags = {
-    Name    = "Gutcheck-Class7-deliverables"
-    Purpose = "Gutcheck submission deliverables"
+    Name    = "gutcheck-class7-deliverables"
+    Purpose = "gutcheck submission deliverables"
   }
 }
 
