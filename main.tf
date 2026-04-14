@@ -22,7 +22,7 @@ resource "aws_s3_bucket" "deliverables" {
 
   tags = {
     Name    = "gutcheck-class7-deliverables"
-    Purpose = "gutcheck submission deliverables"
+    Purpose = "Gutcheck submission deliverables"
   }
 }
 
