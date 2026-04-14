@@ -61,98 +61,98 @@ resource "aws_s3_bucket_policy" "deliverables" {
   })
 }
 
-# =============================================================================
-# Upload screenshots
-# =============================================================================
+#=============================================================================
+#Upload screenshots
+#============================================================================
 
-# resource "aws_s3_object" "webhook_trigger" {
-#   bucket       = aws_s3_bucket.deliverables.id
-#   key          = "screenshots/01-webhook-trigger.png"
-#   source       = "${path.module}/deliverables/01-webhook-trigger.png"
-#   content_type = "image/png"
-# }
+resource "aws_s3_object" "webhook_trigger" {
+  bucket       = aws_s3_bucket.deliverables.id
+  key          = "screenshots/01-webhook-trigger.png"
+  source       = "${path.module}/deliverables/01-webhook-trigger.png"
+  content_type = "image/png"
+}
 
-# resource "aws_s3_object" "tf_success" {
-#   bucket       = aws_s3_bucket.deliverables.id
-#   key          = "screenshots/02-terraform-success.png"
-#   source       = "${path.module}/deliverables/02-terraform-success.png"
-#   content_type = "image/png"
-# }
+resource "aws_s3_object" "tf_success" {
+  bucket       = aws_s3_bucket.deliverables.id
+  key          = "screenshots/02-terraform-success.png"
+  source       = "${path.module}/deliverables/02-terraform-success.png"
+  content_type = "image/png"
+}
 
-# resource "aws_s3_object" "stage_view" {
-#   bucket       = aws_s3_bucket.deliverables.id
-#   key          = "screenshots/03-stage-view.png"
-#   source       = "${path.module}/deliverables/03-stage-view.png"
-#   content_type = "image/png"
-# }
+resource "aws_s3_object" "stage_view" {
+  bucket       = aws_s3_bucket.deliverables.id
+  key          = "screenshots/03-stage-view.png"
+  source       = "${path.module}/deliverables/03-stage-view.png"
+  content_type = "image/png"
+}
 
-# resource "aws_s3_object" "theo_approval" {
-#   bucket       = aws_s3_bucket.deliverables.id
-#   key          = "screenshots/04-theo-approval.png"
-#   source       = "${path.module}/deliverables/04-theo-approval.png"
-#   content_type = "image/png"
-# }
+resource "aws_s3_object" "theo_approval" {
+  bucket       = aws_s3_bucket.deliverables.id
+  key          = "screenshots/04-theo-approval.png"
+  source       = "${path.module}/deliverables/04-theo-approval.png"
+  content_type = "image/png"
+}
 
-# resource "aws_s3_object" "bucket_files" {
-#   bucket       = aws_s3_bucket.deliverables.id
-#   key          = "screenshots/05-bucket-files.png"
-#   source       = "${path.module}/deliverables/05-bucket-files.png"
-#   content_type = "image/png"
-# }
+resource "aws_s3_object" "bucket_files" {
+  bucket       = aws_s3_bucket.deliverables.id
+  key          = "screenshots/05-bucket-files.png"
+  source       = "${path.module}/deliverables/05-bucket-files.png"
+  content_type = "image/png"
+}
 
-# resource "aws_s3_object" "readme" {
-#   bucket       = aws_s3_bucket.deliverables.id
-#   key          = "README.md"
-#   content_type = "text/markdown"
-#   #acl          = "public-read"
+resource "aws_s3_object" "readme" {
+  bucket       = aws_s3_bucket.deliverables.id
+  key          = "README.md"
+  content_type = "text/markdown"
+  #acl          = "public-read"
 
-#   content = <<-EOF
-#     # Class 7 G-Check Deliverables
+  content = <<-EOF
+    # Class 7 G-Check Deliverables
     
 
-#     ## Repo
-#     https://github.com/Velma098/Gutcheck-Class7
+    ## Repo
+    https://github.com/Velma098/Gutcheck-Class7
 
-#     ## Evidence
-#     | Requirement | File |
-#     |---|---|
-#     | Working webhook trigger | screenshots/01-webhook-trigger.png |
-#     | Successful Terraform deployment via Jenkins | screenshots/02-terraform-success.png |
-#     | Jenkins stage view | screenshots/03-stage-view.png |
-#     | Theo approval | screenshots/04-theo-approval.png |
-#   EOF
-# }
+    ## Evidence
+    | Requirement | File |
+    |---|---|
+    | Working webhook trigger | screenshots/01-webhook-trigger.png |
+    | Successful Terraform deployment via Jenkins | screenshots/02-terraform-success.png |
+    | Jenkins stage view | screenshots/03-stage-view.png |
+    | Theo approval | screenshots/04-theo-approval.png |
+  EOF
+}
 
-# =============================================================================
-# Outputs — public URLs for each deliverable
-# =============================================================================
+#=============================================================================
+#Outputs — public URLs for each deliverable
+#=============================================================================
 
-# output "deliverables_bucket" {
-#   description = "S3 bucket name"
-#   value       = aws_s3_bucket.deliverables.id
-# }
+output "deliverables_bucket" {
+  description = "S3 bucket name"
+  value       = aws_s3_bucket.deliverables.id
+}
 
-# output "webhook_trigger_url" {
-#   description = "Public URL - webhook trigger screenshot"
-#   value       = "https://${aws_s3_bucket.deliverables.bucket_regional_domain_name}/screenshots/01-webhook-trigger.png"
-# }
+output "webhook_trigger_url" {
+  description = "Public URL - webhook trigger screenshot"
+  value       = "https://${aws_s3_bucket.deliverables.bucket_regional_domain_name}/screenshots/01-webhook-trigger.png"
+}
 
-# output "tf_success_url" {
-#   description = "Public URL - Terraform success screenshot"
-#   value       = "https://${aws_s3_bucket.deliverables.bucket_regional_domain_name}/screenshots/02-terraform-success.png"
-# }
+output "tf_success_url" {
+  description = "Public URL - Terraform success screenshot"
+  value       = "https://${aws_s3_bucket.deliverables.bucket_regional_domain_name}/screenshots/02-terraform-success.png"
+}
 
-# output "stage_view_url" {
-#   description = "Public URL - stage view screenshot"
-#   value       = "https://${aws_s3_bucket.deliverables.bucket_regional_domain_name}/screenshots/03-stage-view.png"
-# }
+output "stage_view_url" {
+  description = "Public URL - stage view screenshot"
+  value       = "https://${aws_s3_bucket.deliverables.bucket_regional_domain_name}/screenshots/03-stage-view.png"
+}
 
-# output "theo_approval_url" {
-#   description = "Public URL - Theo approval screenshot"
-#   value       = "https://${aws_s3_bucket.deliverables.bucket_regional_domain_name}/screenshots/04-theo-approval.png"
-# }
+output "theo_approval_url" {
+  description = "Public URL - Theo approval screenshot"
+  value       = "https://${aws_s3_bucket.deliverables.bucket_regional_domain_name}/screenshots/04-theo-approval.png"
+}
 
-# output "readme_url" {
-#   description = "Public URL - README"
-#   value       = "https://${aws_s3_bucket.deliverables.bucket_regional_domain_name}/README.md"
-# }
+output "readme_url" {
+  description = "Public URL - README"
+  value       = "https://${aws_s3_bucket.deliverables.bucket_regional_domain_name}/README.md"
+}
